@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .container{
+           display: flex;
+           flex-direction: column;
+       }
+       .data{
+           text-align: center;
+       }
+        label,input{
+            font-size: large;
+            font-weight: bold;
+            height: 35px;
+            text-align: center;
+
+        }
+        label{
+            text-align: center;
+            font-size: 27.5px;
+
+        }
+        .text{
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom:30px ;
+            text-align: center;
+            text-align: center;
+
+        }
+        input{
+            margin-bottom: 30px;
+            border: 2px solid black;
+
+        }
+        button{
+            width:256px;
+            height: 35px;
+            font-size: x-large;
+            font-weight: bold;
+            border: 3px solid black;
+            border-radius:5px;
+            background:linear-gradient(90deg,cyan,rgb(49, 49, 248),blue,indigo);
+            text-align: center;
+        }
+        button:hover{
+            background:linear-gradient(90deg,indigo,blue,rgb(49, 49, 248),cyan);
+        }
+        .btn{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="text">Sign Up Form</div>
+
+            <form id="myForm" onsubmit="submitData()">
+                <div class="data ss-item-required">
+                    <label for="name">Name: </label><br>
+                <input autocomplete=none type="text" name="name" id="name" placeholder="Your Name" required>
+                
+                </div>
+               
+                <div class="data ss-item-required">
+                    <label for="pass">Create Password: </label><br>
+                    <input type="password" name="pass" id="pass" placeholder="Create Password" required>
+                  
+                </div>
+                <div class="data ss-item-required">
+                    <label for="pass">Re-Enter Password: </label><br>
+                    <input type="password" name="pass" id="pass" placeholder="Create Password" required>
+                  
+                </div>
+               
+               <div class="btn">
+                <button type="submit">Sign up</button>
+            </div>
+            </form>
+    
+        </div>
+        <script>
+        function setCookie(cname,cvalue,exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+         }
+          
+        function submitData(){
+            event.preventDefault()
+            setCookie("username", document.getElementById("name").value, 35600);
+            location.pathname="index.html";
+        }
+        </script>
+</body>
+</html>
